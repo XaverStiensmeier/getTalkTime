@@ -7,4 +7,4 @@ Python program to get non-silent time of an audio file.
 - "o", "--output": File to write csv to. If none is given, no csv file will be written.
 
 ## About Thresholds
-If you have too much background noise, I advise you to first use noise reduction (using Audacity or another program) and then come back. Altering the threshold should be the last resort or if you know what you are doing.
+If you have too much background noise, I advise you to first use noise reduction (using Audacity or another program) and then come back. Altering the threshold should be the last resort. Of course, if your recording is very quiet, thresholding might be the right way to go.
