@@ -29,6 +29,7 @@ args = parser.parse_args()
 results = {}
 if not args.files:
     args.files = [file for file in glob.glob("*.*") if file.endswith(FILE_ENDINGS)]
+    args.files.sort()
     print(args.files)
 
 for file in args.files:
@@ -54,6 +55,6 @@ for file in args.files:
 if args.output:
     with open(args.output, 'w') as csv_file:  
         writer = csv.writer(csv_file)
+        writer.writerow(["name", "talk_time", "all_time", "talk_percentage"])
         for key, value in results.items():
-            writer.writerow(["name", "talk_time", "all_time", "talk_percentage"])
             writer.writerow([key, int(value["talk_time"]), value["all_time"], value["talk_percentage"]])
